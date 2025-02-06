@@ -5,12 +5,12 @@ import styles from './styles';
 
 export default function TodoItem({ task, deleteTask, toggleCompleted }) {
     return (
-        <View style={styles.todo-item}> 
+        <View style={styles.todoItem}> 
             <CheckBox
                 value={task.completed}
                 onValueChange={() => toggleCompleted(task.id)}
             />
-            <Text style={[styles.todo-itemText, task.completed && styles.completed]}>
+            <Text style={[styles.todoItemText, task.completed && styles.completed]}>
               {task.text}
            </Text>
 
