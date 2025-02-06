@@ -14,6 +14,7 @@ export default function TodoList() {
 
     // Function to Add Task
     function addTask() {
+        if (text.trim().length === 0) return; //prevent adding empty tasks
         const newTask = { id: Date.now(), text, completed: false };
         setTasks([...tasks, newTask]);
         setText('');
@@ -26,7 +27,7 @@ export default function TodoList() {
 
     // Function to Toggle Task Completion 
     function toggleCompleted(id) {
-        setTasks(tasks.map(task => (task.id === id ? { ...task, completed: !task.completed } : task)))
+        setTasks(tasks.map(task => (task.id === id ? { ...task, completed: !task.completed } : task)));
     }
 
     // Render TodoList Component
@@ -37,12 +38,12 @@ export default function TodoList() {
                     key={task.id}
                     task={task}
                     deleteTask={deleteTask}
-                    toggleComplete={toggleCompleted}
+                    toggleCompleted={toggleCompleted}
                 />
             ))}
             <TextInput
                 value={text}
-                onchange={setText}
+                onChangeText={setText}
                 placeholder="New Task"
             />
             <Button title="Add" onPress={addTask} />
