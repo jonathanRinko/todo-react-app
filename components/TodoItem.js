@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Button } from "react-native";
 import { CheckBox } from "react-native-elements";
 import styles from './styles'; 
 
@@ -14,18 +14,19 @@ export default function TodoItem({ task, deleteTask, toggleCompleted }) {
               {task.text}
            </Text>
 
-            {/* <Text style={{ textDecorationLine: task.completed ? 'line-through' : 'none' }}>
+            <Text style={{ textDecorationLine: task.completed ? 'line-through' : 'none' }}>
               {task.text}
-            </Text> */}
+            </Text>
 
-            {/* <Button title="X" onPress={() => deleteTask(task.id)} /> */}
+            <Button title="X" onPress={() => deleteTask(task.id)} />
+            <Text style={styles.deleteButtonText}>Delete</Text>
               
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.deleteButton}
             onPress={() => deleteTask(task.id)}>
 
             <Text style={styles.deleteButtonText}>Delete</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
     );
 }
