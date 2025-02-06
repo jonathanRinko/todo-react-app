@@ -33,7 +33,7 @@ export default function TodoList() {
 
     // Render TodoList Component
     return (
-        <View>
+        <View style={styles.container}>
             {tasks.map(task => (
                 <TodoItem
                     key={task.id}
@@ -42,7 +42,7 @@ export default function TodoList() {
                     toggleCompleted={toggleCompleted}
                 />
             ))}
-            <TextInput
+            <TextInput style={styles.input}
                 value={text}
                 onChangeText={setText}
                 placeholder="New Task"

@@ -25,11 +25,24 @@ const styles = StyleSheet.create({
         paddingVertical: 4,
         paddingHorizontal: 8,
         borderRadius: 4,
+        borderColor: 'black',
         alignItems: 'center', // Center text inside button
+        zIndex: 10,
     },
     deleteButtonText: {
         color: '#fff',
         fontWeight: 'bold',
+        fontSize: 16,
+    },
+    container: {
+        padding: 16,
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 8,
+        marginVertical: 8,
+        borderRadius: 4,
     },
 });
 
